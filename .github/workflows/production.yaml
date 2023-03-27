@@ -23,6 +23,7 @@ jobs:
           echo DATABASE_HOST=db >> .env_docker
           echo DATABASE_USERNAME=postgres >> .env_docker
           echo DATABASE_PASSWORD=admin >> .env_docker
+          echo DATABASE_NAME=worker_management_test >> .env_docker
 
       - name: Build docker images
         run: docker-compose build
