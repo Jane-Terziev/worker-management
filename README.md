@@ -1,24 +1,20 @@
-# README
+## Getting started locally
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To get started locally, you are required to have postgres, redis and the ruby version specified in the Gemfile.
 
-Things you may want to cover:
+```ruby
+cp .env_sample .env
+bundle install
+rake db:create db:migrate
+rails s
+```
 
-* Ruby version
+## With docker:
+If you have docker installed, you need to run the following commands:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```ruby
+cp .env_docker_sample .env_docker
+docker-compose build
+docker-compose run --rm api rake db:create db:migrate
+docker-compose up
+```
